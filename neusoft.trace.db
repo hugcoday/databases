@@ -1,0 +1,742 @@
+12-15 15:06:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+select* from users [42102-148]
+12-15 15:06:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+select * from Users [42102-148]
+12-15 15:08:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE NEUSOFT.TASKLIST (TASK_ID INT PRIMARY KEY,
+   TASK_OWER VARCHAR(255),
+   TASK_STATUS VARCHAR(255)  DEFAULT 'N',
+   TASK_DATE TIMESTAMP DEFAULT  NULL  ,
+   TASK_DEADLINE TIMESTAMP DEFAULT NULL ,
+   TASK_MATTER VARCHAR(2000)，
+   PROJECT_OWER[*] VARCHAR(1000)) "; expected ")"; SQL statement:
+CREATE TABLE NEUSOFT.TASKLIST (TASK_ID INT PRIMARY KEY,
+   TASK_OWER VARCHAR(255),
+   TASK_STATUS VARCHAR(255)  default 'N',
+   TASK_DATE TIMESTAMP default  null  ,
+   TASK_DEADLINE TIMESTAMP default null ,
+   TASK_MATTER VARCHAR(2000)，
+   PROJECT_OWER VARCHAR(1000)) [42001-148]
+12-15 15:09:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant "current timestamp", cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "NEUSOFT"."TASKLIST"("TASK_ID","TASK_OWER","TASK_STATUS","TASK_DATE","TASK_DEADLINE","TASK_MATTER","PROJECT_OWER")VALUES(?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7) [90011-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:146)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:200)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:282)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2737)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1031)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:674)
+12-15 15:09:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant "current timestamp", cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "NEUSOFT"."TASKLIST"("TASK_ID","TASK_OWER","TASK_STATUS","TASK_DATE","TASK_DEADLINE","TASK_MATTER","PROJECT_OWER")VALUES(?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7) [90011-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:146)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:200)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:282)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2737)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1031)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:674)
+12-15 15:35:30 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NEUSOFT[*].TASKLIST SELECT * FROM INFORMATION_SCHEMA.DOMAINS"; SQL statement:
+NEUSOFT.TASKLIST SELECT * FROM INFORMATION_SCHEMA.DOMAINS [42000-148]
+12-15 15:36:01 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT TASK_ID  AS '你好'[*] FROM NEUSOFT.TASKLIST "; expected "identifier"; SQL statement:
+SELECT task_id  as '你好' FROM NEUSOFT.TASKLIST [42001-148]
+12-15 15:45:32 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT TASK_ID AS '序号'[*] FROM NEUSOFT.TASKLIST "; expected "identifier"; SQL statement:
+select task_id as '序号' from neusoft.tasklist [42001-148]
+12-15 15:46:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "TASK_OWNER" not found; SQL statement:
+select task_id as 序号 ,task_owner as 任务 from neusoft.tasklist [42122-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:773)
+	at org.h2.command.Parser.prepare(Parser.java:202)
+	at org.h2.command.Parser.prepareCommand(Parser.java:214)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1056)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:585)
+	at dbedit.actions.RunAction.createStatement(RunAction.java:182)
+	at dbedit.actions.RunAction.performThreaded(RunAction.java:49)
+	at dbedit.actions.CustomAction$1.execute(CustomAction.java:67)
+	at dbedit.ThreadedAction.run(ThreadedAction.java:48)
+	at java.lang.Thread.run(Unknown Source)
+12-15 15:46:13 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "TASK_OWNER" not found; SQL statement:
+select task_id as 序号 ,task_owner as 任务 from neusoft.tasklist [42122-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:773)
+	at org.h2.command.Parser.prepare(Parser.java:202)
+	at org.h2.command.Parser.prepareCommand(Parser.java:214)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1056)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:585)
+	at dbedit.actions.RunAction.createStatement(RunAction.java:182)
+	at dbedit.actions.RunAction.performThreaded(RunAction.java:49)
+	at dbedit.actions.CustomAction$1.execute(CustomAction.java:67)
+	at dbedit.ThreadedAction.run(ThreadedAction.java:48)
+	at java.lang.Thread.run(Unknown Source)
+12-16 10:29:01 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant "current_timestamp", cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "NEUSOFT"."TASKLIST"("TASK_ID","TASK_OWER","TASK_STATUS","TASK_DATE","TASK_DEADLINE","TASK_MATTER","PROJECT_OWER")VALUES(?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7) [90011-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:146)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:200)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:282)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2737)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1031)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:674)
+12-16 10:29:01 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant "current_timestamp", cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "NEUSOFT"."TASKLIST"("TASK_ID","TASK_OWER","TASK_STATUS","TASK_DATE","TASK_DEADLINE","TASK_MATTER","PROJECT_OWER")VALUES(?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7) [90011-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:146)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:200)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:282)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2737)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1031)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:674)
+12-21 09:03:39 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Schema "NESOFT" not found; SQL statement:
+CREATE TABLE nesoft.workdiary(ID INT PRIMARY KEY,
+   work_date timestamp
+   diary VARCHAR(255)) [90079-148]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.Parser.getSchema(Parser.java:607)
+	at org.h2.command.Parser.getSchema(Parser.java:614)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:4954)
+	at org.h2.command.Parser.parseCreate(Parser.java:3705)
+	at org.h2.command.Parser.parsePrepared(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:275)
+	at org.h2.command.Parser.parse(Parser.java:247)
+	at org.h2.command.Parser.prepare(Parser.java:201)
+	at org.h2.command.Parser.prepareCommand(Parser.java:214)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1056)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:165)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:153)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1322)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:973)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:976)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:674)
+12-21 09:03:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE NEUSOFT.WORKDIARY(ID INT PRIMARY KEY,
+   WORK_DATE TIMESTAMP
+   DIARY[*] VARCHAR(255)) "; expected ")"; SQL statement:
+CREATE TABLE neusoft.workdiary(ID INT PRIMARY KEY,
+   work_date timestamp
+   diary VARCHAR(255)) [42001-148]
+03-08 10:15:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "HTTP[*]:                                                                                    . "; expected "HELP, {"; SQL statement:
+http://10.20.14.168:8082/query.do?jsessionid=b9669bdc65ecd34fd511d0c66ad0e47a&sql=@cancel. [42001-152]
+03-11 11:20:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "NEUSOFT"."TASKLIST"("TASK_ID","TASK_OWER","TASK_STATUS","TASK_DATE","TASK_DEADLINE","TASK_MATTER","PROJECT_OWER","DEAL_INFO")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-11 11:20:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "NEUSOFT"."TASKLIST"("TASK_ID","TASK_OWER","TASK_STATUS","TASK_DATE","TASK_DEADLINE","TASK_MATTER","PROJECT_OWER","DEAL_INFO")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-11 11:22:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "ROW_ID" not found; SQL statement:
+SELECT * FROM NEUSOFT.TASKLIST order by row_id desc [42122-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:134)
+	at org.h2.command.dml.Select.prepare(Select.java:780)
+	at org.h2.command.Parser.prepare(Parser.java:202)
+	at org.h2.command.Parser.prepareCommand(Parser.java:214)
+	at org.h2.engine.Session.prepareLocal(Session.java:426)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1093)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1308)
+	at org.h2.server.web.WebApp.query(WebApp.java:994)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:957)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:960)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-14 11:11:16 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "EDIT[*]	CREATE TABLE TECHNOLOGY(ID INT PRIMARY KEY,
+   CONTENT VARCHAR(2000)) "; expected "EXPLAIN, EXECUTE, {"; SQL statement:
+Edit	CREATE TABLE technology(ID INT PRIMARY KEY,
+   content VARCHAR(2000)) [42001-152]
+03-21 16:49:07 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TASKLIST(
+    ID INT NOT NULL,
+    OWER VARCHAR(255),
+    MATTER VARCHAR(2000),
+    ACTION_INFO VARCHAR(2000),
+    STATUS VARCHAR(255) DEFAULT 'N',
+    DATE TIMESTAMP DEFAULT NULL,
+    DEADLINE TIMESTAMP DEFAULT NULL,
+    
+    PROJECT VARCHAR(1000) "; expected ")"; SQL statement:
+CREATE TABLE TASKLIST(
+    ID INT NOT NULL,
+    OWER VARCHAR(255),
+    MATTER VARCHAR(2000),
+    action_INFO VARCHAR(2000),
+    STATUS VARCHAR(255) DEFAULT 'N',
+    DATE TIMESTAMP DEFAULT NULL,
+    DEADLINE TIMESTAMP DEFAULT NULL,
+    
+    PROJECT VARCHAR(1000) [42001-152]
+03-21 16:49:17 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TASKS(
+    ID INT NOT NULL,
+    OWER VARCHAR(255),
+    MATTER VARCHAR(2000),
+    ACTION_INFO VARCHAR(2000),
+    STATUS VARCHAR(255) DEFAULT 'N',
+    DATE TIMESTAMP DEFAULT NULL,
+    DEADLINE TIMESTAMP DEFAULT NULL,
+    
+    PROJECT VARCHAR(1000) "; expected ")"; SQL statement:
+CREATE TABLE TASKs(
+    ID INT NOT NULL,
+    OWER VARCHAR(255),
+    MATTER VARCHAR(2000),
+    action_INFO VARCHAR(2000),
+    STATUS VARCHAR(255) DEFAULT 'N',
+    DATE TIMESTAMP DEFAULT NULL,
+    DEADLINE TIMESTAMP DEFAULT NULL,
+    
+    PROJECT VARCHAR(1000) [42001-152]
+03-21 16:53:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT TASKS[*] VALUES(1,'周迪','  ','',1,NULL,NULL,'') "; expected "INTO"; SQL statement:
+insert tasks values(1,'周迪','  ','',1,null,null,'') [42001-152]
+03-21 17:02:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "TASKLIST3" not found; SQL statement:
+drop table TASKLIST3 [42102-152]
+03-21 17:06:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASKLIST"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-21 17:06:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASKLIST"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-21 17:06:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASKLIST"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-21 17:06:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASKLIST"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-152]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:804)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-24 09:35:32 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-24 09:35:32 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-24 09:36:45 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant "null", cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-24 09:36:45 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant "null", cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-28 14:03:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-28 14:03:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-28 14:04:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (ID INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90021-153]
+03-28 14:04:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (ID INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90021-153]
+03-28 14:04:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (ID INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90021-153]
+03-28 14:04:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (ID INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90021-153]
+03-29 09:28:55 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-29 09:28:55 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+INSERT INTO "PUBLIC"."TASK"("ID","OWER","MATTER","ACTION_INFO","STATUS","DATE","DEADLINE","PROJECT")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:114)
+	at org.h2.command.dml.Insert.update(Insert.java:86)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:318)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2739)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1015)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-29 09:31:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+UPDATE "PUBLIC"."TASK" SET "ID"=? ,"OWER"=? ,"MATTER"=? ,"ACTION_INFO"=? ,"STATUS"=? ,"DATE"=? ,"DEADLINE"=? ,"PROJECT"=?  WHERE "ID"=? [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Update.update(Update.java:104)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.updateRow(UpdatableRow.java:285)
+	at org.h2.jdbc.JdbcResultSet.updateRow(JdbcResultSet.java:2767)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1017)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-29 09:31:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse timestamp constant , cause: "format yyyy-mm-dd"; SQL statement:
+UPDATE "PUBLIC"."TASK" SET "ID"=? ,"OWER"=? ,"MATTER"=? ,"ACTION_INFO"=? ,"STATUS"=? ,"DATE"=? ,"DEADLINE"=? ,"PROJECT"=?  WHERE "ID"=? [90011-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.util.DateTimeUtils.parseDateTime(DateTimeUtils.java:257)
+	at org.h2.value.ValueTimestamp.parseTimestamp(ValueTimestamp.java:82)
+	at org.h2.value.Value.convertTo(Value.java:814)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Update.update(Update.java:104)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.updateRow(UpdatableRow.java:285)
+	at org.h2.jdbc.JdbcResultSet.updateRow(JdbcResultSet.java:2767)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1017)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-29 16:29:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE USER WANGYONGQING "; expected "COMMENT, PASSWORD, SALT, IDENTIFIED"; SQL statement:
+create user wangyongqing [42001-153]
+03-29 16:33:58 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Not enough rights for object "PUBLIC.TASK"; SQL statement:
+SELECT * FROM TASK [90096-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.User.checkRight(User.java:98)
+	at org.h2.table.TableFilter.<init>(TableFilter.java:121)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1047)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1645)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1752)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1639)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1484)
+	at org.h2.command.Parser.parseSelect(Parser.java:1472)
+	at org.h2.command.Parser.parsePrepared(Parser.java:401)
+	at org.h2.command.Parser.parse(Parser.java:275)
+	at org.h2.command.Parser.parse(Parser.java:247)
+	at org.h2.command.Parser.prepare(Parser.java:201)
+	at org.h2.command.Parser.prepareCommand(Parser.java:214)
+	at org.h2.engine.Session.prepareLocal(Session.java:426)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1100)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1308)
+	at org.h2.server.web.WebApp.query(WebApp.java:994)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:957)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:960)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-29 16:34:15 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Not enough rights for object "PUBLIC.TECHNOLOGY"; SQL statement:
+SELECT * FROM TECHNOLOGY [90096-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.User.checkRight(User.java:98)
+	at org.h2.table.TableFilter.<init>(TableFilter.java:121)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1047)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1645)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1752)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1639)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1484)
+	at org.h2.command.Parser.parseSelect(Parser.java:1472)
+	at org.h2.command.Parser.parsePrepared(Parser.java:401)
+	at org.h2.command.Parser.parse(Parser.java:275)
+	at org.h2.command.Parser.parse(Parser.java:247)
+	at org.h2.command.Parser.prepare(Parser.java:201)
+	at org.h2.command.Parser.prepareCommand(Parser.java:214)
+	at org.h2.engine.Session.prepareLocal(Session.java:426)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1100)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1308)
+	at org.h2.server.web.WebApp.query(WebApp.java:994)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:957)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:960)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
+03-29 16:35:32 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Feature not supported: "META"; SQL statement:
+update INFORMATION_SCHEMA.USERS  set admin ='true' where name='GUEST' [50100-153]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:327)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:202)
+	at org.h2.table.MetaTable.removeRow(MetaTable.java:1618)
+	at org.h2.table.Table.updateRows(Table.java:419)
+	at org.h2.command.dml.Update.update(Update.java:128)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:69)
+	at org.h2.command.Command.executeUpdate(Command.java:212)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1308)
+	at org.h2.server.web.WebApp.query(WebApp.java:994)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:957)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:960)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Thread.java:619)
